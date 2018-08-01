@@ -1,184 +1,5 @@
-/*Font Imports*/
-@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
-
-/*Keyframes*/
-@-webkit-keyframes messagefade {
-    0% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    99% {
-        opacity: 0;
-        top: 0;
-    }
-    100% {
-        opacity: 0;
-        top: -51px;
-    }
-}
-
-@-moz-keyframes messagefade {
-    0% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    99% {
-        opacity: 0;
-        top: 0;
-    }
-    100% {
-        opacity: 0;
-        top: -51px;
-    }
-}
-
-@keyframes messagefade {
-    0% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    99% {
-        opacity: 0;
-        top: 0;
-    }
-    100% {
-        opacity: 0;
-        top: -51px;
-    }
-}
-
-@keyframes helptip {
-    0% {
-        margin: 0 0 0 0px;
-    }
-    10% {
-        margin: 0 0 0 -15px;
-    }
-    20% {
-        margin: 0 0 0 0px;
-    }
-    30% {
-        margin: 0 0 0 -15px;
-    }
-    40% {
-        margin: 0 0 0 0px;
-    }
-    50% {
-        margin: 0 0 0 -15px;
-    }
-    60% {
-        margin: 0 0 0 0px;
-    }
-    70% {
-        margin: 0 0 0 -15px;
-    }
-    80% {
-        margin: 0 0 0 0px;
-    }
-    90% {
-        margin: 0 0 0 -15px;
-        visibility: visible;
-        opacity: 1;
-    }
-    100% {
-        margin: 0 0 0 0px;
-        visibility: hidden;
-        opacity: 0;
-    }
-}
-
-@keyframes msg-animation {
-    80% {
-        opacity: 1;
-    }
-    99.99% {
-        opacity: 0;
-        height: auto;
-        visibility: visible;
-        margin-bottom: 5px;
-        padding: 5px;
-    }
-    100%{
-        height: 0px;
-        margin: 0px;
-        padding: 0px;
-        visibility: hidden;
-    }
-}
-
-/* Didn't work, used transitions instead
-@keyframes modal-flow {
-    from {visibility: hidden;top:-100px;opacity: 0;}
-    to {visitbility: visible;top:0px;opacity:1;}
-}
-@-moz-keyframes modal-flow {
-    from {transform: scale(3.3) rotateX(60deg) translateY(-100%);}
-    to {transform: scale(1) rotateX(0deg) translateY(0%);}
-}*/
-/*END Keyframes*/
-
-/*Top Level Elements*/
-::selection {
-    background: rgba(9, 63, 59, 0.75);
-}
-
-sup {
-    vertical-align: super;
-    font-size: smaller;
-}
-
-html, body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background: saddlebrown;
-    overflow-y: hidden;
-}
-
-a {
-    color: #FF5722;
-    text-decoration: underline;
-}
-
-b {
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
-}
-
-h2 {
-    font-size: 25px;
-    margin-bottom: 5px;
-}
-
-h3 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-strong {
-    font-weight: bold;
-}
-
-/*Container classes and whatnot*/
-.container {
-    width: 668px;
-    margin: 0 auto;
-}
-
-.clear {
-    clear: both;
-    display: block;
-}
-
 /*Now here's where the fun begins...*/
-.controller {
+.controller.custom {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -193,7 +14,7 @@ strong {
 }
 
 /*BEGIN Xbox 360 Controller Styling*/
-.controller.xbox-old {
+.controller.custom {
     background: url('https://github.com/itzwam/mdrlol/raw/master/bg.png');
     height: 544px;
     width: 668px;
@@ -201,46 +22,46 @@ strong {
         margin-top: -228px;*/
 }
 
-.xbox-old.disconnected {
+.custom.disconnected {
     background: url(xbox-assets-old/bg-disconnect.png);
 }
 
-.xbox-old.disconnected div {
+.custom.disconnected div {
     display: none;
 }
 
-.xbox-old .triggers {
+.custom .triggers {
     width: 430px;
     height: 76px;
     position: absolute;
     left: 119px;
 }
 
-.xbox-old .trigger {
+.custom .trigger {
     width: 33px;
     height: 76px;
     background: url('https://github.com/itzwam/mdrlol/raw/master/trigger.png');
     opacity: 0;
 }
 
-.xbox-old .trigger.left {
+.custom .trigger.left {
     float: left;
     background-position: 0 0;
 }
 
-.xbox-old .trigger.right {
+.custom .trigger.right {
     float: right;
     background-position: 0 -77px;
 }
 
-.xbox-old .bumper {
+.custom .bumper {
     width: 119px;
     height: 44px;
     background: url(xbox-assets-old/bumper.png);
     opacity: 0;
 }
 
-.xbox-old .bumpers {
+.custom .bumpers {
     position: absolute;
     width: 516px;
     height: 44px;
@@ -248,21 +69,21 @@ strong {
     top: 84px;
 }
 
-.xbox-old .bumper.pressed {
+.custom .bumper.pressed {
     opacity: 1;
 }
 
-.xbox-old .bumper.left {
+.custom .bumper.left {
     float: left;
 }
 
-.xbox-old .bumper.right {
+.custom .bumper.right {
     float: right;
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
-.xbox-old .quadrant {
+.custom .quadrant {
     position: absolute;
     background: url(xbox-assets-old/quadrant.png);
     height: 100px;
@@ -272,27 +93,27 @@ strong {
     z-index: -1;
 }
 
-.xbox-old .p0 {
+.custom .p0 {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
 }
 
-.xbox-old .p1 {
+.custom .p1 {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
-.xbox-old .p2 {
+.custom .p2 {
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
 }
 
-.xbox-old .p3 {
+.custom .p3 {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 
-.xbox-old .arrows {
+.custom .arrows {
     position: absolute;
     width: 180px;
     height: 29px;
@@ -300,27 +121,27 @@ strong {
     left: 244px;
 }
 
-.xbox-old .back, .xbox-old .start {
+.custom .back, .custom .start {
     background: url(xbox-assets-old/arrow.png);
     width: 34px;
     height: 29px;
 }
 
-.xbox-old .back.pressed, .xbox-old .start.pressed {
+.custom .back.pressed, .custom .start.pressed {
     background-position: 0 -30px;
 }
 
-.xbox-old .back {
+.custom .back {
     float: left;
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
-.xbox-old .start {
+.custom .start {
     float: right;
 }
 
-.xbox-old .abxy {
+.custom .abxy {
     position: absolute;
     width: 161px;
     height: 160px;
@@ -328,59 +149,59 @@ strong {
     left: 451px
 }
 
-.xbox-old .button {
+.custom .button {
     position: absolute;
     width: 54px;
     height: 54px;
 }
 
-.xbox-old .button.a {
+.custom .button.a {
     width: 53px;
     height: 53px;
 }
 
-.xbox-old .button.y {
+.custom .button.y {
     width: 55px;
     height: 54px;
 }
 
-.xbox-old .button.pressed {
+.custom .button.pressed {
     background-position: 0 -55px;
     margin-top: 6px;
     opacity: 1;
 }
 
-.xbox-old .button.pressed.a {
+.custom .button.pressed.a {
     background-position: 0 -54px;
 }
 
-.xbox-old .button.pressed.y {
+.custom .button.pressed.y {
     background-position: 0 -56px;
 }
 
-.xbox-old .a {
+.custom .a {
     background: url(xbox-assets-old/a.png);
     top: 108px;
     left: 55px;
 }
 
-.xbox-old .b {
+.custom .b {
     background: url(xbox-assets-old/b.png);
     top: 54px;
     right: 0px;
 }
 
-.xbox-old .x {
+.custom .x {
     background: url(xbox-assets-old/x.png);
     top: 54px;
 }
 
-.xbox-old .y {
+.custom .y {
     background: url(xbox-assets-old/y.png);
     left: 54px;
 }
 
-.xbox-old .sticks {
+.custom .sticks {
     position: absolute;
     width: 383px;
     height: 208px;
@@ -388,28 +209,28 @@ strong {
     left: 89px;
 }
 
-.xbox-old .stick {
+.custom .stick {
     position: absolute;
     background: url(xbox-assets-old/stick.png);
     height: 86px;
     width: 86px;
 }
 
-.xbox-old .stick.pressed {
+.custom .stick.pressed {
     background-position: 0 -87px;
 }
 
-.xbox-old .stick.left {
+.custom .stick.left {
     top: 0;
     left: 0;
 }
 
-.xbox-old .stick.right {
+.custom .stick.right {
     top: calc(100% - 86px);
     left: calc(100% - 86px);
 }
 
-.xbox-old .dpad {
+.custom .dpad {
     position: absolute;
     width: 112px;
     height: 112px;
@@ -417,7 +238,7 @@ strong {
     left: 174px;
 }
 
-.xbox-old .face {
+.custom .face {
     position: absolute;
     font-size: 30px;
     line-height: 0;
@@ -426,47 +247,47 @@ strong {
     font-family: 'FontAwesome';
 }
 
-.xbox-old .face.pressed {
+.custom .face.pressed {
     opacity: 1;
 }
 
-.xbox-old .face.up {
+.custom .face.up {
     left: 42px;
     top: 20px;
 }
 
-.xbox-old .face.up:after {
+.custom .face.up:after {
     content: "\f062";
 }
 
-.xbox-old .face.down {
+.custom .face.down {
     left: 42px;
     bottom: 20px;
 }
 
-.xbox-old .face.down:after {
+.custom .face.down:after {
     content: "\f063";
 }
 
-.xbox-old .face.left {
+.custom .face.left {
     top: 56px;
     left: 3px;
 }
 
-.xbox-old .face.left:after {
+.custom .face.left:after {
     content: "\f060";
 }
 
-.xbox-old .face.right {
+.custom .face.right {
     top: 56px;
     right: 3px;
 }
 
-.xbox-old .face.right:after {
+.custom .face.right:after {
     content: "\f061";
 }
 
-.xbox-old.half {
+.custom.half {
     margin-top: -272px;
 }
 
@@ -2600,7 +2421,7 @@ background-position: 0 -70px;
     background: white;
 }
 
-.console.xbox, .console.xbox-old {
+.console.xbox, .console.custom {
     background: url('icons/xbx.png') no-repeat center;
 }
 
