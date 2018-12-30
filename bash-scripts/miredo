@@ -1,0 +1,35 @@
+#!/bin/bash
+
+###################
+# file : /usr/local/bin/miredo
+# usage : miredo <start/stop/restart>
+# author : itzwam
+
+if [[ $UID -ne 0 ]]; then
+    sudo -p "Restarting as root :" /bin/bash $0 "$@"
+    exit $?
+fi
+(($# != 1)) && echo usage $0 '<start/stop/restart>' && exit 1
+case $1 in
+"start")
+    echo "[+] Loading tun kext"
+    kextload /Applications/Tunnelblick.app/Contents/Resources/tun-signed.kext
+    echo "[+] Starting miredo"
+    /opt/local/sbin/miredo
+    (($? == 0)) && echo "[+] Miredo started" && sleep 1 && echo "[+] Your ipv6 is : $(ifconfig tun0 | grep inet6 | grep -v '%tun0' | awk '{print $2}')"
+    ;;
+"stop")
+    echo "[-] Stoping miredo"
+    killall miredo
+    (($? == 0)) && echo "[-] Miredo stoped"
+    ;;
+"restart")
+    $0 stop
+    $0 start
+    ;;
+*)
+    echo usage $0 '<start/stop/restart>' && exit 1
+    ;;
+esac 
+
+
