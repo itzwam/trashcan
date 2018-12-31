@@ -24,7 +24,7 @@ elif data.status_code == 403:
   print("[#] It was not intended, please retry")
 
 elif data.status_code == 429:
-  print("[#] Stop fucking spamming ! Take your time and retry in 5 minutes")
+  print("[#] Stop spamming please :). Take your time and retry in 5 minutes")
 
 elif data.status_code == 200:
   for report in data.json():
