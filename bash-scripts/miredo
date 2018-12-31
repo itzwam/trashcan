@@ -16,7 +16,11 @@ case $1 in
     kextload /Applications/Tunnelblick.app/Contents/Resources/tun-signed.kext
     echo "[+] Starting miredo"
     /opt/local/sbin/miredo
-    (($? == 0)) && echo "[+] Miredo started" && sleep 1 && echo "[+] Your ipv6 is : $(ifconfig tun0 | grep inet6 | grep -v '%tun0' | awk '{print $2}')"
+    if [ $? == 0 ]; then
+        echo "[+] Miredo started"
+        sleep 1
+        echo "[+] Your ipv6 is : $(ifconfig tun0 | grep inet6 | grep -v '%tun0' | awk '{print $2}')"
+    fi
     ;;
 "stop")
     echo "[-] Stoping miredo"
