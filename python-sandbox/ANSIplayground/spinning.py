@@ -12,5 +12,5 @@ def spinning(stop=50):
         sys.stdout.flush()
         time.sleep(0.1)
     sys.stdout.write(u"\u001b[?25h")
-    
-spinning(5)
+
+spinning(2.5)
