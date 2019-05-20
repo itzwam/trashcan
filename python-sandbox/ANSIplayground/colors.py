@@ -4,6 +4,7 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     REVERSED = '\033[7m'
+    BLINK = '\033[5m'
     
     # <COLOR> : Color
     BLACK = '\033[30m'
@@ -50,7 +51,7 @@ class bcolors:
     
 def printcolor(text="", color="BLUE"):
     str = text + "{RESET}"
-    print str.format(**bcolors.__dict__)
+    print(str.format(**bcolors.__dict__))
 
 
 for color in bcolors.__dict__:
